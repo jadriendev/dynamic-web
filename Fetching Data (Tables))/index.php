@@ -1,8 +1,9 @@
 <?php
 include_once 'config.php';
 
-$sql = "SELECT * FROM informations";
+$sql = "SELECT * FROM products";
 $result = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
