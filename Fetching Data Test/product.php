@@ -12,15 +12,15 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <?php while ($row = $result->fetch_assoc()) { ?>
+    <title><?= $row['product_name']; ?> | View Details</title>
 </head>
 <body>
     <div>
-        <?php while ($row = $result->fetch_assoc()) { ?>
-            <h1><?= $row['product_name']; ?></h1>
-            <h3>Price: <?= $row['price']; ?></h3>
-            <p>Stock: <?= $row['stock']; ?></p>
-        <?php } ?>
+        <h1><?= $row['product_name']; ?></h1>
+        <h3>Price: <?= $row['price']; ?></h3>
+        <h3>Stock: <?= $row['stock']; ?></h3>
+    <?php } ?>
     </div>
 </body>
 </html>
